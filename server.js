@@ -24,5 +24,10 @@ push.setVapidDetails("mailto:arvind@kraftshala.com", vapidKeys.publicKey, vapidK
 
 // let sub = { "endpoint": "https://wns2-sg2p.notify.windows.com/w/?token=BQYAAADeqvnD2d50qqMUJQ537NYP41JWSwAIPE%2f11RlJqcCW80ElH4UvRw%2bt6tmmFEOO4iZ1620hvEkj%2bwK0Dqdyh%2br8d2vMGT7wcA5pr2rhM8RiVgz0q0zl%2fXSEmhJnjuC0JnQ%2f%2bGOj%2f0rny1xeTpjGBf1oZdo%2btH2jTxDsOdTIoaRy5LE%2fYbhJi%2fFMOYoXcXrvWytntW0ifxmuSFD85leT4jjWTPQ4G%2bDKBDFsXNSbDQ5YSde2RLBodJbj5O%2bJYO%2f5OpJ7%2bcIXOc6w6MC2gW4lXmlugR77de5YX65uY8s4GFzi4mjRSZrXZL8pqMOXy%2bJ0n60JNqULIh5AVlbx2Tv0pi6VpVbBJt9V7SPqgmTWhQwQMAfKdNzqeD6a16zM21plvxs%3d", "expirationTime": null, "keys": { "p256dh": "BJTyzFc_KBJj1WXD6BHbSD6NEh1WE-gyqpVyzHvWtBKjcN2qe_pYT6kRQYCvHTHAz6U1E5VlOJq83G-44Za9BQE", "auth": "qmWgKzkuKE7icWE9R4uEhg" } }
 
-let sub = { "endpoint": "https://updates.push.services.mozilla.com/wpush/v2/gAAAAABhJ0E4fOEKSFZUOOaPdpyv-c4aaOun_n45Pfe5yX_pRjBsiYKOZD0w-QKPa1pI4AeFPAR34df9x9pVTOxJBT-sIt5ExrQrFGh2PQOkC382DPtMb-txqY1pEOgOzM646LvROuaddZO37HeOKT4ScNGYvK1zaEDCdrGd_gWQja7KgUneYs8", "keys": { "auth": "pV0IKH_mOrOGBM2h8bs-ew", "p256dh": "BD3Vehjy7vTPK097X26wFRD3YSG247k94u8OMUvxLNXd311KT7L8Vj0HMvn9FEFVJdsXKeckNLanpygvOBpyLhQ" } }
-push.sendNotification(sub, "new test message")
+// let sub = { "endpoint": "https://updates.push.services.mozilla.com/wpush/v2/gAAAAABhJ0E4fOEKSFZUOOaPdpyv-c4aaOun_n45Pfe5yX_pRjBsiYKOZD0w-QKPa1pI4AeFPAR34df9x9pVTOxJBT-sIt5ExrQrFGh2PQOkC382DPtMb-txqY1pEOgOzM646LvROuaddZO37HeOKT4ScNGYvK1zaEDCdrGd_gWQja7KgUneYs8", "keys": { "auth": "pV0IKH_mOrOGBM2h8bs-ew", "p256dh": "BD3Vehjy7vTPK097X26wFRD3YSG247k94u8OMUvxLNXd311KT7L8Vj0HMvn9FEFVJdsXKeckNLanpygvOBpyLhQ" } }
+
+let sub = { "endpoint": "https://fcm.googleapis.com/fcm/send/c_pCwI5Wapk:APA91bFsyKfrlIeZ_T_AalVQl0PveMuWU50oJgxjpvIAev8Y9l25RGJrcMooUCIM11_4LwLvNwhUG0U1JpGBC1QffDKFzsytJrMIHyHe5NcmGpnwbggIkRc3adeJGbK0TBFK5QHXXwpc", "expirationTime": null, "keys": { "p256dh": "BEjYWfPzehO4OQb_rEKJBgO6gvHsc1L6Oe3U-2Yf8_l5ZLsenZWttC8ydq94f__gxJwWRIxs90jB4ytV_fGnFvE", "auth": "8GVN-MerMPX__CSW-ob58A" } }
+
+let payload = JSON.stringify({ title: "Server title", body: "Server body" })
+
+push.sendNotification(sub, payload)
