@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Push Notification</title>
+</head>
+
+<body>
+
+    <h1>
+        Web Push Notification Example
+    </h1>
+
+
+    <button onclick="subscribe()">Subscribe</button>
+
+    <script>
+
+        addEventListener("load", async () => {
+            let sw = navigator.serviceWorker.register("./service-worker.js")
+
+            console.log("sw", sw)
+        })
+
+
+        async function subscribe() {
+            let sw = await navigator.serviceWorker.ready;
+
+            let push = await sw.pushManager.subscribe({
+                userVisibleOnly: true,
+                applicationServerKey: "BPWSO8DLJf6XD6dNChPBlVa5eRA5erNdaNq1W9fMN0CbtspOwl0OAHydmBddQdHqt2AEPbKcP-gDtMhbbIoEOrY"
+            })
+
+            console.log("push", JSON.stringify(push))
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
